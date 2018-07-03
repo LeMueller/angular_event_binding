@@ -1,0 +1,13 @@
+<p>
+  bind works!
+</p>
+<!-- Dom attribute -->
+<button (click)="doOnClick($event)">Button</button>
+<!-- HTML attribute -->
+<input value="Tom" (input)="doOnInput($event)">
+
+<img [src]="imgUrl">
+<img src={{imgUrl}}>
+
+<!-- HTML attribute 即使是false也不能点击 -->
+<button disabled="false">disabled="fasle"</button>
