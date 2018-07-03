@@ -1,6 +1,3 @@
-<p>
-  bind works!
-</p>
 <!-- Dom attribute -->
 <button (click)="doOnClick($event)">Button</button>
 <!-- HTML attribute -->
@@ -12,11 +9,10 @@
 <!-- HTML attribute 即使是false也不能点击 -->
 <button disabled="false">disabled="fasle"</button>
 
+<h1>HTML binding</h1>
 <table>
   <!-- error: colspan is not a DOM attribute -->
   <!-- <tr><td colspan="{{1+1}}">imooc</td></tr> -->
-
-
   <tr><td [attr.colspan]="size">imooc</td></tr>
 </table>
 
@@ -34,3 +30,9 @@
 
 <div [ngStyle]="ngDivStyle" >imooc</div>
 
+<h1>two-way binding</h1>
+
+<!-- the same -->
+<input [value]="name" type="text" (input)="doOnInput2($event)">
+<input [(ngModel)] = "name">
+{{name}}

@@ -28,6 +28,8 @@ export class BindComponent implements OnInit {
     background: 'yellow',
   };
 
+  name: string = '';
+
   constructor() {
     setTimeout(()=>{
       this.divClass = "a b c";
@@ -43,6 +45,10 @@ export class BindComponent implements OnInit {
         background: 'green',
       };
     }, 3000);
+
+    setInterval(()=>{
+      this.name="Tom";
+    }, 3000);
   }
 
   ngOnInit() {
@@ -57,7 +63,10 @@ export class BindComponent implements OnInit {
     console.log(event.target.value);
 
     console.log(event.target.getAttribute('value'));
-    
+  }
+
+  doOnInput2(event: any) {
+    this.name = event.target.value;
   }
 
 }
