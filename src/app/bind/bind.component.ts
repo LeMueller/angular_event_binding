@@ -9,7 +9,41 @@ export class BindComponent implements OnInit {
 
   imgUrl: string = "http://via.placeholder.com/350x150";
 
-  constructor() { }
+  size: number = 20;
+
+  divClass: string = '';
+
+  isBig: boolean = false;
+
+  isDev: boolean = true;
+
+  ngDivClass: any = {
+    a: false,
+    b: false,
+    c: false,
+  };
+
+  ngDivStyle: any = {
+    color: 'red',
+    background: 'yellow',
+  };
+
+  constructor() {
+    setTimeout(()=>{
+      this.divClass = "a b c";
+      this.isBig = true;
+      this.ngDivClass = {
+        a: true,
+        b: true,
+        c: true,
+      };
+      this.isDev = false;
+      this.ngDivStyle = {
+        color: 'yellow',
+        background: 'green',
+      };
+    }, 3000);
+  }
 
   ngOnInit() {
   }

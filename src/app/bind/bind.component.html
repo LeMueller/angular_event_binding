@@ -11,3 +11,26 @@
 
 <!-- HTML attribute 即使是false也不能点击 -->
 <button disabled="false">disabled="fasle"</button>
+
+<table>
+  <!-- error: colspan is not a DOM attribute -->
+  <!-- <tr><td colspan="{{1+1}}">imooc</td></tr> -->
+
+
+  <tr><td [attr.colspan]="size">imooc</td></tr>
+</table>
+
+<!-- <div class="a b c">imooc</div> -->
+<div [class]="divClass">imooc</div>
+
+
+<div class="a b" [class.c]="isBig">imooc</div>
+
+<div [ngClass]="ngDivClass" >imooc</div>
+
+<div [style.color]="isDev? 'red': 'blue'" >imooc</div>
+
+<div [style.font-size.em]="isDev? 3 : 1" >imooc</div>
+
+<div [ngStyle]="ngDivStyle" >imooc</div>
+
